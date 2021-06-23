@@ -1,3 +1,4 @@
 dist
 distq
 node_modules
+src/environments
