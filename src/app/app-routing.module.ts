@@ -35,6 +35,10 @@ const routes: Routes = [
         loadChildren: () => import('./pages/cities/cities.module').then(m => m.CitiesModule)
       },
       {
+        path: 'area',
+        loadChildren: () => import('./pages/area/area.module').then(m => m.AreaModule)
+      },
+      {
         path: 'users',
         loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule)
       },
@@ -98,6 +102,10 @@ const routes: Routes = [
       {
         path: 'manage-city',
         loadChildren: () => import('./pages/manage-city/manage-city.module').then(m => m.ManageCityModule)
+      },
+      {
+        path: 'manage-area',
+        loadChildren: () => import('./pages/manage-area/manage-area.module').then(m => m.ManageAreaModule)
       },
       {
         path: 'manage-contacts',

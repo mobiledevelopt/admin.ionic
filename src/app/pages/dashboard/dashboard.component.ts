@@ -18,6 +18,7 @@ import { ApisService } from 'src/app/services/apis.service';
 })
 export class DashboardComponent implements OnInit {
   dummy = Array(5);
+  dummyData: any[] = [];
   page: number = 1;
 
   orders: any[] = [];
@@ -74,6 +75,7 @@ export class DashboardComponent implements OnInit {
           }
         });
         this.orders = orders;
+        this.dummyData = this.orders;
         console.log(this.users);
       }
     }, error => {
@@ -105,6 +107,22 @@ export class DashboardComponent implements OnInit {
     return moment(date).format('llll');
   }
 
+  search(str) {
+    this.resetChanges();
+    console.log('string', str);
+    this.orders = this.filterItems(str);
+  }
+
+  protected resetChanges = () => {
+    this.orders = this.dummyData;
+  }
+
+  filterItems(searchTerm) {
+    return this.orders.filter((item) => {
+      return item.id.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+    });
+  }
+
   openOrder(item) {
     console.log(item);
     const navData: NavigationExtras = {
@@ -118,4 +136,5 @@ export class DashboardComponent implements OnInit {
   openIt(item) {
     this.router.navigate([item]);
   }
+
 }

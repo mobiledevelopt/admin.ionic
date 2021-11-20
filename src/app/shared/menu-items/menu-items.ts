@@ -55,6 +55,12 @@ const MENUITEMS = [
         icon: 'ti-location-pin'
       },
       {
+        state: 'area',
+        name: 'Area',
+        type: 'link',
+        icon: 'ti-location-pin'
+      },
+      {
         state: 'stores',
         name: 'Stores',
         type: 'link',
